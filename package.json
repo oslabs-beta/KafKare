@@ -1,0 +1,25 @@
+{
+  "name": "kafkare",
+  "version": "1.0.0",
+  "description": "Production Project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server/server.js",
+    "start": "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lijiaxingogo/KafKare.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lijiaxingogo/KafKare/issues"
+  },
+  "homepage": "https://github.com/lijiaxingogo/KafKare#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "kafkajs": "^1.15.0"
+  }
+}
