@@ -7,6 +7,7 @@ async function run() {
   try {
     const kafka = new Kafka({
       clientId: 'myapp',
+      ssl: true,
       brokers: [`${host}:9092`],
     });
 
