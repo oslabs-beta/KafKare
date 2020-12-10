@@ -18,3 +18,41 @@ services:
       KAFKA_CREATE_TOPICS: 'topic-test:1:1'
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+
+  kafka_exporter:
+    image: danielqsj/kafka-exporter
+    ports:
+      - '9308:9308'
+    depends_on:
+      - kafka
+    restart: always
+ 
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - 9090:9090
+    volumes:
+      - $PWD/Utils/scripts/prometheus.yml:/etc/prometheus/prometheus.yml
+    depends_on:
+      - kafka_exporter
+      - alertmanager
+    restart: always
+ 
+  alertmanager:
+    image: prom/alertmanager
+    ports:
+      - 9093:9093
+    depends_on:
+      - kafka_exporter
+ 
+  grafana:
+    image: grafana/grafana
+    ports:
+      - '3000:3000'
+    volumes:
+      - $PWD/plugin:/var/lib/grafana/plugins
+    depends_on:
+      - prometheus
+    volumes:
+      - $PWD/plugin:/var/lib/grafana/plugins
+

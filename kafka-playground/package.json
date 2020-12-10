@@ -21,6 +21,7 @@
   "homepage": "https://github.com/lijiaxingogo/KafKare#readme",
   "dependencies": {
     "ip": "^1.1.5",
-    "kafkajs": "^1.15.0"
+    "kafkajs": "^1.15.0",
+    "nodemon": "^2.0.6"
   }
 }
