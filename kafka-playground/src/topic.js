@@ -1,12 +1,15 @@
 //const Kafka = require("kafkajs").Kafka
 const { Kafka } = require('kafkajs');
 const ip = require('ip');
+// const dns = require('dns');
+// const w3 = dns.lookupService('localhost', 9092, (err, value) => { if (err){console.log(err); return;}console.log(value)});
 const host = process.env.HOST_IP || ip.address();
 run();
 async function run() {
   try {
     const kafka = new Kafka({
       clientId: 'myapp',
+      // ssl: true,
       brokers: [`${host}:9092`],
     });
 
