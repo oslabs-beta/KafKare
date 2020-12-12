@@ -21,3 +21,8 @@ app.use((err, req, res, next) => {
 app.listen(PORT, function () {
   console.log(`server listening on ${PORT}`);
 });
+
+
+//database
+ //webSockets
+   //SQL database
