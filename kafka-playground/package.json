@@ -1,0 +1,27 @@
+{
+  "name": "kafkare-playground",
+  "version": "1.0.0",
+  "description": "Production Project",
+  "main": "index.js",
+  "scripts": {
+    "consumer": "nodemon src/consumer.js",
+    "producer": "node src/producer.js",
+    "topic": "nodemon src/topic.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lijiaxingogo/KafKare.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lijiaxingogo/KafKare/issues"
+  },
+  "homepage": "https://github.com/lijiaxingogo/KafKare#readme",
+  "dependencies": {
+    "ip": "^1.1.5",
+    "kafkajs": "^1.15.0",
+    "nodemon": "^2.0.6"
+  }
+}
