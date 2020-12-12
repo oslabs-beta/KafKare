@@ -26,7 +26,10 @@
     "express": "^4.17.1",
     "kafkajs": "^1.15.0",
     "nodemon": "^2.0.6",
+    "passport.socketio": "^3.7.0",
     "sass-loader": "^10.1.0",
+    "socket.io": "^3.0.4",
+    "socket.io-client": "^3.0.4",
     "style-loader": "^2.0.0",
     "webpack": "^5.10.0",
     "webpack-dev-server": "^3.11.0"
