@@ -1,10 +1,19 @@
-const app = require('express')(); 
-const express = require('express');
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 const path = require('path');
+const http = require('http'); 
+const express = require('express'); 
+const socketio = require('socket.io'); 
 
-const app = express();
-const PORT = 3000;
-app.use(express.json());
+const app = express(); 
+const server = http.createServer(app); 
+const io = socketio(server); 
+io.on('connection', () => {console.log('connection')}); 
+server.listen(3000); 
+
+
+
+
 app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../src/index.html'));
 });

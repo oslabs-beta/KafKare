@@ -1,0 +1,32 @@
+{
+  "name": "KafKare",
+  "version": "1.0.0",
+  "description": "Production Project",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "electron": "^11.1.0",
+    "passport.socketio": "^3.7.0",
+    "react": "^17.0.1",
+    "socket.io": "^3.0.4",
+    "socket.io-client": "^3.0.4",
+    "webpack-cli": "^4.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "eslint-plugin-react": "^7.21.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfiguereo89/KafKare.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jfiguereo89/KafKare/issues"
+  },
+  "homepage": "https://github.com/jfiguereo89/KafKare#readme"
+}
