@@ -1,7 +1,12 @@
+const app = require('express')(); 
 const express = require('express');
+const http = require('http').createServer(app);
+const io = require('socket.io')(http); 
+const PORT = process.env.PORT || 8080;
 
-const app = express();
-const PORT = 8080;
+
+
+
 app.use(express.json());
 app.get('/', (req, res) => {
   res.send('hello');
@@ -17,6 +22,7 @@ app.use((err, req, res, next) => {
   console.log(errorObj.log);
   return res.status(errorObj.status).json(errorObj.message);
 });
+
 
 app.listen(PORT, function () {
   console.log(`server listening on ${PORT}`);
