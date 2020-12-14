@@ -1,15 +1,12 @@
 const app = require('express')(); 
 const express = require('express');
-const http = require('http').createServer(app);
-const io = require('socket.io')(http); 
-const PORT = process.env.PORT || 8080;
+const path = require('path');
 
-
-
-
+const app = express();
+const PORT = 3000;
 app.use(express.json());
 app.get('/', (req, res) => {
-  res.send('hello');
+  res.sendFile(path.resolve(__dirname, '../src/index.html'));
 });
 // global error handling
 app.use((err, req, res, next) => {
