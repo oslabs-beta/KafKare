@@ -8,6 +8,7 @@
     "electron": "^11.1.0",
     "passport.socketio": "^3.7.0",
     "pg": "^8.5.1",
+    "pg-pool": "^3.2.2",
     "react": "^17.0.1",
     "socket.io": "^3.0.4",
     "socket.io-client": "^3.0.4",

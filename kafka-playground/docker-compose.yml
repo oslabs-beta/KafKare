@@ -55,11 +55,9 @@ services:
       - '3000:3000'
     volumes:
       - $PWD/plugin:/var/lib/grafana/plugins
-      - ./grafana/provisioning/:/etc/grafana/provisioning/
+      - $PWD/provisioning/:/etc/grafana/provisioning/
     depends_on:
       - prometheus
-    volumes:
-      - $PWD/plugin:/var/lib/grafana/plugins
     environment:
       GF_SECURITY_ALLOW_EMBEDDING: 'true'
 
