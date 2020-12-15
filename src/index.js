@@ -2,11 +2,12 @@ import React from 'react';
 
 import { render } from 'react-dom';
 import App from './App';
+import './App.css';
 
-const title = 'Welcome to KafKare';
+const title = 'Hello and welcome to KafKare';
 console.log('indexJS');
-// ReactDOM.render(<App title={title} />, document.getElementById('app'));
-render(<div>'hello'</div>, document.getElementById('app'));
+
+render(<App title={title} />, document.getElementById('app'));
 
 //below makes hot reloading available
 module.hot.accept();
