@@ -7,7 +7,10 @@
     "consumer": "nodemon src/consumer.js",
     "producer": "node src/producer.js",
     "topic": "nodemon src/topic.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "testbed": "nodemon data-generator/server.js",
+    "build-testbed": "webpack data-generator/main.ts -o data-generator/main.js",
+    "dev": "cross-env NODE_ENV=development concurrently \"webpack-dev-server --open\" \"nodemon server/server.js\""
   },
   "repository": {
     "type": "git",
@@ -20,8 +23,22 @@
   },
   "homepage": "https://github.com/lijiaxingogo/KafKare#readme",
   "dependencies": {
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.3",
+    "express": "^4.17.1",
     "ip": "^1.1.5",
     "kafkajs": "^1.15.0",
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "ts-loader": "^8.0.1",
+    "typescript": "^4.1.3",
+    "webpack": "^5.6.0",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "babel-jest": "^26.2.2"
   }
 }

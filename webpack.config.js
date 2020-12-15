@@ -17,7 +17,7 @@ module.exports = {
     publicPath: 'http://localhost:8080/dist/',
     proxy: {
       // Webpack dev server does not hit the backend. But if we want a request that use the backend, we need a proxy that says if there's a fetch on /api, redirect any request to localhost:3000.
-      '/': 'http://localhost:3000/',
+      '/': 'http://localhost:3002/',
     },
     //below line is for  hot module replacement
     hot: true,
