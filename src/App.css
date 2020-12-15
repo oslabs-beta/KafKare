@@ -1,0 +1,18 @@
+.header-container {
+  display: flex;
+  flex-direction: row;
+  border: solid black 3px;
+}
+
+ul {
+  list-style-type: none;
+  border: solid blue 3px;
+}
+li {
+  border: solid red 3px;
+  border-radius: 10px;
+}
+
+.consumers {
+  border: dotted green 6px;
+}

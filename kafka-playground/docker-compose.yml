@@ -56,5 +56,7 @@ services:
       - prometheus
     volumes:
       - $PWD/plugin:/var/lib/grafana/plugins
+    environment:
+      GF_SECURITY_ALLOW_EMBEDDING: 'true'
 
 
