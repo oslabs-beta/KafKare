@@ -1,10 +1,11 @@
 const express = require('express');
+const path = require('path');
 
 const app = express();
-const PORT = 8080;
+const PORT = 3000;
 app.use(express.json());
 app.get('/', (req, res) => {
-  res.send('hello');
+  res.sendFile(path.resolve(__dirname, '../src/index.html'));
 });
 // global error handling
 app.use((err, req, res, next) => {
