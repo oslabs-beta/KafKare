@@ -18,7 +18,7 @@ services:
       KAFKA_CREATE_TOPICS: 'topic-test:1:1'
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-       
+
   kafka_exporter:
     image: danielqsj/kafka-exporter
     ports:
@@ -26,25 +26,35 @@ services:
     depends_on:
       - kafka
     restart: always
- 
+
   prometheus:
     image: prom/prometheus
     ports:
       - 9090:9090
     volumes:
       - $PWD/Utils/scripts/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./data/prometheus/data:/prometheus
     depends_on:
       - kafka_exporter
       - alertmanager
+      - cadvisor
+      - node-exporter
     restart: always
- 
+
   alertmanager:
     image: prom/alertmanager
     ports:
       - 9093:9093
     depends_on:
       - kafka_exporter
- 
+
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: monitoring_node_exporter
+    restart: always
+    expose:
+      - 9100
+
   grafana:
     image: grafana/grafana
     ports:
@@ -52,9 +62,20 @@ services:
     volumes:
       - $PWD/plugin:/var/lib/grafana/plugins
       - $PWD/provisioning/:/etc/grafana/provisioning/
+      - ./data/grafana:/var/lib/grafana
     depends_on:
       - prometheus
     environment:
       GF_SECURITY_ALLOW_EMBEDDING: 'true'
 
-
+  cadvisor:
+    image: google/cadvisor:latest
+    container_name: monitoring_cadvisor
+    restart: always
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    expose:
+      - 8085

@@ -11,6 +11,13 @@ img {
   width: auto;
   height: auto;
 }
+.iframe {
+  border-radius: 20px;
+}
+.topics {
+  display: grid;
+  place-items: center;
+}
 
 .header-container {
   display: grid;
@@ -32,6 +39,7 @@ img {
 }
 
 .grid-item {
+  display: grid;
   /* border: dotted red 2px; */
   background-color: #b3bfd1;
   border-radius: 20px;
