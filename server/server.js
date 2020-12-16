@@ -1,9 +1,9 @@
 const express = require('express');
 const path = require('path');
-const socketio = require('socket.io')
+
 const app = express();
-const server = http.createServer(app);
-const PORT = 3000;
+
+const PORT = 3002;
 app.use(express.json());
 app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../src/index.html'));
@@ -20,6 +20,6 @@ app.use((err, req, res, next) => {
   return res.status(errorObj.status).json(errorObj.message);
 });
 
-server.listen(PORT, function () {
+app.listen(PORT, function () {
   console.log(`server listening on ${PORT}`);
 });
