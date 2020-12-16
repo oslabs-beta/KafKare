@@ -12,8 +12,6 @@ io.on('connection', () => {console.log('connection')});
 server.listen(3000); 
 
 
-
-
 const app = express();
 const PORT = 3002;
 app.use(express.json());

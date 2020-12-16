@@ -6,14 +6,12 @@ const pool = new Pool({
         PG_URI,
   });
 
-
-  pool.query('SELECT NOW()', (err, res) => {
+pool.query('SELECT NOW()', (err, res) => {
       console.log(err, res)
       pool.end()
   }); 
   
-  
-  const client = new Client({
+const client = new Client({
             PG_URI,
   })
   client.connect()
