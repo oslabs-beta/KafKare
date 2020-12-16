@@ -1,18 +1,5 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
+const express = require('express');
 const path = require('path');
-const http = require('http'); 
-const express = require('express'); 
-const socketio = require('socket.io'); 
-
-const app = express(); 
-const server = http.createServer(app); 
-const io = socketio(server); 
-io.on('connection', () => {console.log('connection')}); 
-server.listen(3000); 
-
-
-
 
 const app = express();
 const PORT = 3002;
@@ -32,12 +19,6 @@ app.use((err, req, res, next) => {
   return res.status(errorObj.status).json(errorObj.message);
 });
 
-
 app.listen(PORT, function () {
   console.log(`server listening on ${PORT}`);
 });
-
-
-
- //webSockets
-   //SQL database

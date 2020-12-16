@@ -1,10 +1,4 @@
 {
-<<<<<<< HEAD
-    "cSpell.words": [
-        "socketio"
-    ]
-=======
     "liveServer.settings.port": 5501,
     "deno.enable": false
->>>>>>> c9554b32aa03fe42d0c0b21a4dc7c00d2c7ec11b
 }
