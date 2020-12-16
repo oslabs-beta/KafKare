@@ -1,9 +1,10 @@
 const { Kafka } = require('kafkajs');
-const msg = process.argv[2];
+
 const ip = require('ip');
+//const { module } = require('../../webpack.config');
 const host = process.env.HOST_IP || ip.address();
-run();
-async function run() {
+
+const runProducer = async (topic, msg) => {
   try {
     const kafka = new Kafka({
       clientId: 'myapp',
@@ -17,7 +18,7 @@ async function run() {
     //A-M 0 , N-Z 1
     const partition = msg[0] < 'N' ? 0 : 1;
     const result = await producer.send({
-      topic: 'Users',
+      topic: topic,
       messages: [
         {
           value: msg,
@@ -25,13 +26,12 @@ async function run() {
         },
       ],
     });
-    console.log('This is the result: ', result);
 
     console.log(`Send Successfully! ${JSON.stringify(result)}`);
-    await producer.disconnect();
+
+    //await producer.disconnect();
   } catch (ex) {
     console.error(`Something bad happened ${ex}`);
-  } finally {
-    process.exit(0);
   }
-}
+};
+module.exports = { runProducer };
