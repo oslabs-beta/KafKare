@@ -18,11 +18,7 @@ services:
       KAFKA_CREATE_TOPICS: 'topic-test:1:1'
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-<<<<<<< HEAD
-
-=======
        
->>>>>>> 6674391d43f1961083134a0bedd6e7a4a68cd673
   kafka_exporter:
     image: danielqsj/kafka-exporter
     ports:
@@ -61,7 +57,4 @@ services:
     environment:
       GF_SECURITY_ALLOW_EMBEDDING: 'true'
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 6674391d43f1961083134a0bedd6e7a4a68cd673
