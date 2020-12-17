@@ -1,19 +1,30 @@
 .logo-container {
   display: grid;
-  background-color: grey;
+
+  margin-bottom: 20px;
+  border-radius: 20px;
+  padding: 10px 0px 10px 0px;
 }
+
 .body {
-  background-color: grey;
+  background-color: #47484a;
+  background-image: linear-gradient(rgb(145, 144, 144), #47484a);
   padding: 20px;
+  border-radius: 20px;
 }
+
 img {
   margin: auto;
   width: auto;
   height: auto;
 }
+
 .iframe {
-  border-radius: 20px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
 }
+
 .topics {
   display: grid;
   place-items: center;
@@ -41,7 +52,7 @@ img {
 .grid-item {
   display: grid;
   /* border: dotted red 2px; */
-  background-color: #b3bfd1;
+  background-color: rgb(184, 183, 183);
   border-radius: 20px;
 }
 
