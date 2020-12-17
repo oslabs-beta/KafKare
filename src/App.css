@@ -14,7 +14,7 @@ img {
 iframe {
   border-radius: 20px;
 }
-
+.green{color:green}
 .component{
   display: grid;
     place-items: center;
