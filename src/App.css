@@ -11,12 +11,13 @@ img {
   width: auto;
   height: auto;
 }
-.iframe {
+iframe {
   border-radius: 20px;
 }
-.topics {
+
+.component{
   display: grid;
-  place-items: center;
+    place-items: center;
 }
 
 .header-container {
