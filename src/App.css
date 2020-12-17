@@ -1,6 +1,5 @@
 .logo-container {
   display: grid;
-
   margin-bottom: 20px;
   border-radius: 20px;
   padding: 10px 0px 10px 0px;
@@ -19,7 +18,7 @@ img {
   height: auto;
 }
 
-.iframe {
+iframe {
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   border-top-right-radius: 25px;
@@ -54,6 +53,7 @@ img {
   /* border: dotted red 2px; */
   background-color: rgb(184, 183, 183);
   border-radius: 20px;
+  place-items: center;
 }
 
 /* .grid-brokers {
