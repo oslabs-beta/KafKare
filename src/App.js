@@ -43,18 +43,18 @@ const App = (props) => {
         <div className="grid-item grid-cpu">
           <Cpu />
         </div>
-        <div className="grid-item grid-consumers">
+        {/* <div className="grid-item grid-consumers">
           <Consumers />
-        </div>
+        </div> */}
         <div className="grid-item grid-health">
           <Health />
         </div>
         <div className="grid-item grid-lag">
           <Lag />
         </div>
-        <div className="grid-item grid-producers">
+        {/* <div className="grid-item grid-producers">
           <Producers />
-        </div>
+        </div> */}
 
         {/* <iframe src={link} width="450" height="200" frameBorder="0"></iframe> */}
       </div>
