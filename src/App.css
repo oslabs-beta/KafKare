@@ -24,7 +24,11 @@ iframe {
   border-top-right-radius: 25px;
 }
 
-.topics {
+.green {
+  color: green
+}
+
+.component {
   display: grid;
   place-items: center;
 }
