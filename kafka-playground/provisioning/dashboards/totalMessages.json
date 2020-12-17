@@ -15,9 +15,137 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 2,
+  "id": 1,
   "links": [],
   "panels": [
+    {
+      "datasource": "Prometheus",
+      "description": "This is the percent of CPU usage for your system. Keep it lower than 80% for a buffer. If this percentage hits 100%, kafka will have large performance issues. ",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 60
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 6,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.3.5",
+      "targets": [
+        {
+          "expr": "avg by (instance,mode) (irate(node_cpu_seconds_total{mode='system'}[1m])) *10000",
+          "interval": "",
+          "legendFormat": "",
+          "queryType": "randomWalk",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "CPU Usage Percentage",
+      "type": "stat"
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "This shows the total space available on your computer. Make sure to have more than 100 GB to meet operational standards.",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 30
+              },
+              {
+                "color": "green",
+                "value": 100
+              }
+            ]
+          },
+          "unit": "decbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 8
+      },
+      "id": 4,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.3.5",
+      "targets": [
+        {
+          "expr": "Max(node_filesystem_avail_bytes)",
+          "interval": "",
+          "legendFormat": "",
+          "queryType": "randomWalk",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Amount of available space",
+      "type": "stat"
+    },
     {
       "datasource": "Prometheus",
       "description": "Total messages received since cluster opened.",
@@ -49,7 +177,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 0
+        "y": 16
       },
       "id": 2,
       "options": {
@@ -58,7 +186,9 @@
         "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["mean"],
+          "calcs": [
+            "mean"
+          ],
           "fields": "",
           "values": false
         },
@@ -67,7 +197,7 @@
       "pluginVersion": "7.3.5",
       "targets": [
         {
-          "expr": "kafka_consumergroup_current_offset_sum",
+          "expr": "sum(kafka_consumergroup_current_offset_sum)",
           "interval": "",
           "legendFormat": "",
           "queryType": "randomWalk",
@@ -94,5 +224,5 @@
   "timezone": "",
   "title": "Total messages",
   "uid": "2LyxeP1Mk",
-  "version": 2
+  "version": 1
 }

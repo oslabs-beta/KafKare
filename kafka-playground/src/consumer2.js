@@ -1,9 +1,9 @@
-//const Kafka = require("kafkajs").Kafka
 const { Kafka } = require('kafkajs');
 const ip = require('ip');
 const host = process.env.HOST_IP || ip.address();
 
-const runConsumer = async (topic) => {
+run();
+async function run() {
   try {
     const kafka = new Kafka({
       clientId: 'myapp',
@@ -16,11 +16,11 @@ const runConsumer = async (topic) => {
     console.log('Connected!');
 
     await consumer.subscribe({
-      topic: topic,
+      topic: 'Users',
       fromBeginning: true,
     });
 
-    console.log(`Subscribed to topic ${topic}`);
+    console.log('Subscribed!');
     await consumer.run({
       eachMessage: async (result) => {
         console.log('The result is actually ', result);
@@ -31,7 +31,6 @@ const runConsumer = async (topic) => {
     });
   } catch (ex) {
     console.error(`Something bad happened ${ex}`);
+  } finally {
   }
-};
-
-module.exports = { runConsumer };
+}
