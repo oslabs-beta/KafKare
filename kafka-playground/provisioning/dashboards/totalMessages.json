@@ -12,19 +12,78 @@
       }
     ]
   },
+  "description": "Metrics for the Kafka cluster",
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 2,
   "links": [],
   "panels": [
+    {
+      "datasource": "Prometheus",
+      "description": "Displays the total messages split by topic. ",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 16,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.3.5",
+      "targets": [
+        {
+          "expr": "kafka_consumergroup_current_offset_sum",
+          "interval": "",
+          "legendFormat": "",
+          "queryType": "randomWalk",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Messages (by Topic)",
+      "type": "stat"
+    },
     {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
       "datasource": "Prometheus",
-      "description": "This is the memory usage of the computer. If the system runs out of memory, Kafka will crash. ",
+      "description": "This is the memory usage of the Prometheus program. If the system runs out of memory, Kafka will crash. ",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -52,7 +111,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 0
+        "y": 8
       },
       "hiddenSeries": false,
       "id": 14,
@@ -84,13 +143,14 @@
         {
           "expr": "(node_memory_MemTotal_bytes - node_memory_MemFree_bytes - node_memory_Buffers_bytes - node_memory_Cached_bytes)/node_memory_MemTotal_bytes",
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "Prometheus",
           "queryType": "randomWalk",
           "refId": "A"
         }
       ],
       "thresholds": [
         {
+          "$$hashKey": "object:382",
           "colorMode": "critical",
           "fill": true,
           "line": true,
@@ -102,7 +162,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Memory Usage",
+      "title": "Memory Usage ",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -158,7 +218,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 8
+        "y": 16
       },
       "hiddenSeries": false,
       "id": 12,
@@ -269,7 +329,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 16
+        "y": 24
       },
       "hiddenSeries": false,
       "id": 10,
@@ -377,7 +437,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 24
+        "y": 32
       },
       "id": 8,
       "options": {
@@ -442,7 +502,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 32
+        "y": 40
       },
       "id": 6,
       "options": {
@@ -506,7 +566,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 40
+        "y": 48
       },
       "id": 4,
       "options": {
@@ -569,7 +629,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 48
+        "y": 56
       },
       "id": 2,
       "options": {
@@ -602,19 +662,31 @@
       "type": "stat"
     }
   ],
+  "refresh": "5s",
   "schemaVersion": 26,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "kafka"
+  ],
   "templating": {
     "list": []
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-30m",
     "to": "now"
   },
-  "timepicker": {},
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m"
+    ]
+  },
   "timezone": "",
-  "title": "Total messages",
+  "title": "Kafka",
   "uid": "2LyxeP1Mk",
   "version": 1
 }
