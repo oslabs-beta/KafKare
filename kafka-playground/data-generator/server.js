@@ -37,7 +37,7 @@ io.on('connection', (socket) => {
   socket.on('produceMsg', (data) => {
     console.log('Im listening for producingMsg');
     console.log(data);
-    for (let i = 0; i < data.n; i++) {
+    for (let i = 0; i <= data.n; i++) {
       runProducer(data.topic, data.msg);
     }
   });
