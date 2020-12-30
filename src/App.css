@@ -1,13 +1,13 @@
 .logo-container {
   display: grid;
   margin-bottom: 20px;
-  border-radius: 20px;
   padding: 10px 0px 10px 0px;
+  border-bottom: 2px solid rgb(155, 155, 155);
 }
 
 .body {
   background-color: #47484a;
-  background-image: linear-gradient(rgb(145, 144, 144), #47484a);
+  background-image: linear-gradient(#4E7AC7, #16193B);
   padding: 20px;
   border-radius: 20px;
 }
@@ -22,10 +22,11 @@ iframe {
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   border-top-right-radius: 25px;
+  box-shadow: 5px 5px 2px 1px rgba(9, 9, 9, 0.139);
 }
 
 .green {
-  color: green
+  color: rgb(4, 165, 4)
 }
 
 .component {
@@ -55,9 +56,11 @@ iframe {
 .grid-item {
   display: grid;
   /* border: dotted red 2px; */
-  background-color: rgb(184, 183, 183);
+  background-color: #ADD5F7;
   border-radius: 20px;
   place-items: center;
+  border: solid rgb(255, 255, 255) 1px;
+  box-shadow: 5px 5px 2px 1px rgba(9, 9, 9, 0.139);
 }
 
 /* .grid-brokers {
