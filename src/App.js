@@ -29,7 +29,7 @@ const App = (props) => {
         >
           <Brokers />
         </div>
-        <div className="grid-item grid-topics">
+        <div className="grid-item grid-topics iframe">
           <Topics />
         </div>
         <div className="grid-item grid-zookeeper">
