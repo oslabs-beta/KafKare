@@ -1,20 +1,35 @@
 .logo-container {
   display: grid;
-  background-color: grey;
+  margin-bottom: 20px;
+  padding: 10px 0px 10px 0px;
+  border-bottom: 2px solid rgb(155, 155, 155);
 }
+
 .body {
-  background-color: grey;
+  background-color: #47484a;
+  background-image: linear-gradient(#4E7AC7, #16193B);
   padding: 20px;
+  border-radius: 20px;
 }
+
 img {
   margin: auto;
   width: auto;
   height: auto;
 }
-.iframe {
-  border-radius: 20px;
+
+iframe {
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+  box-shadow: 5px 5px 2px 1px rgba(9, 9, 9, 0.139);
 }
-.topics {
+
+.green {
+  color: rgb(4, 165, 4)
+}
+
+.component {
   display: grid;
   place-items: center;
 }
@@ -41,8 +56,11 @@ img {
 .grid-item {
   display: grid;
   /* border: dotted red 2px; */
-  background-color: #b3bfd1;
+  background-color: #ADD5F7;
   border-radius: 20px;
+  place-items: center;
+  border: solid rgb(255, 255, 255) 1px;
+  box-shadow: 5px 5px 2px 1px rgba(9, 9, 9, 0.139);
 }
 
 /* .grid-brokers {
