@@ -1,0 +1,34 @@
+{
+  "name": "natel-discrete-panel",
+  "version": "0.1.0",
+  "description": "Discrete Events in Grafana",
+  "scripts": {
+    "build": "grafana-toolkit plugin:build",
+    "test": "grafana-toolkit plugin:test",
+    "dev": "grafana-toolkit plugin:dev",
+    "watch": "grafana-toolkit plugin:dev --watch"
+  },
+  "author": "ryantxu",
+  "license": "MIT",
+  "keywords": [
+    "discrete",
+    "canvas",
+    "grafana",
+    "plugin",
+    "panel"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NatelEnergy/grafana-discrete-panel.git"
+  },
+  "devDependencies": {
+    "@grafana/toolkit": "latest",
+    "@grafana/data": "latest",
+    "@grafana/ui": "latest",
+    "@types/grafana": "github:CorpGlory/types-grafana.git",
+    "@types/lodash": "4.14.149",
+    "jquery": "^3.2.1",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.1"
+  }
+}

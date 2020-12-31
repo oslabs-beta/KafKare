@@ -19,6 +19,144 @@
   "links": [],
   "panels": [
     {
+      "backgroundColor": "rgba(128,128,128,0.1)",
+      "colorMaps": [
+        {
+          "$$hashKey": "object:439",
+          "color": "#F2495C",
+          "text": "null"
+        },
+        {
+          "$$hashKey": "object:505",
+          "color": "#FADE2A",
+          "text": "Not Running"
+        },
+        {
+          "$$hashKey": "object:506",
+          "color": "#73BF69",
+          "text": "Running"
+        }
+      ],
+      "crosshairColor": "#8F070C",
+      "datasource": "Prometheus",
+      "description": "Determines if zookeeper is running based on whether zookeeper is maintaining partition replicas. Ensure zookeeper is running. ",
+      "display": "timeline",
+      "expandFromQueryS": 0,
+      "extendLastValue": true,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "highlightOnMouseover": true,
+      "id": 18,
+      "legendSortBy": "-ms",
+      "lineColor": "rgba(0,0,0,0.1)",
+      "metricNameColor": "#000000",
+      "pluginVersion": "7.3.5",
+      "rangeMaps": [
+        {
+          "$$hashKey": "object:289",
+          "from": "1",
+          "text": "Running",
+          "to": "999999999"
+        },
+        {
+          "$$hashKey": "object:305",
+          "from": "-999",
+          "text": "Not Running",
+          "to": "0"
+        }
+      ],
+      "rowHeight": 50,
+      "showLegend": true,
+      "showLegendNames": true,
+      "showLegendPercent": true,
+      "showLegendValues": true,
+      "showTimeAxis": true,
+      "targets": [
+        {
+          "expr": "kafka_topic_partition_replicas",
+          "interval": "",
+          "legendFormat": " ",
+          "queryType": "randomWalk",
+          "refId": "A"
+        }
+      ],
+      "textSize": 24,
+      "textSizeTime": 12,
+      "timeFrom": null,
+      "timeOptions": [
+        {
+          "name": "Years",
+          "value": "years"
+        },
+        {
+          "name": "Months",
+          "value": "months"
+        },
+        {
+          "name": "Weeks",
+          "value": "weeks"
+        },
+        {
+          "name": "Days",
+          "value": "days"
+        },
+        {
+          "name": "Hours",
+          "value": "hours"
+        },
+        {
+          "name": "Minutes",
+          "value": "minutes"
+        },
+        {
+          "name": "Seconds",
+          "value": "seconds"
+        },
+        {
+          "name": "Milliseconds",
+          "value": "milliseconds"
+        }
+      ],
+      "timePrecision": {
+        "name": "Minutes",
+        "value": "minutes"
+      },
+      "timeShift": null,
+      "timeTextColor": "#d8d9da",
+      "title": "Zookeeper Status",
+      "type": "natel-discrete-panel",
+      "units": "short",
+      "useTimePrecision": false,
+      "valueMaps": [
+        {
+          "$$hashKey": "object:287",
+          "op": "=",
+          "text": "Not Running",
+          "value": "null"
+        },
+        {
+          "$$hashKey": "object:291",
+          "op": "=",
+          "text": "",
+          "value": ""
+        }
+      ],
+      "valueTextColor": "#000000",
+      "writeAllValues": false,
+      "writeLastValue": true,
+      "writeMetricNames": false
+    },
+    {
       "datasource": "Prometheus",
       "description": "Displays the total messages split by topic. ",
       "fieldConfig": {
@@ -45,7 +183,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 0
+        "y": 8
       },
       "id": 16,
       "options": {
@@ -111,7 +249,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 8
+        "y": 16
       },
       "hiddenSeries": false,
       "id": 14,
@@ -218,7 +356,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 16
+        "y": 24
       },
       "hiddenSeries": false,
       "id": 12,
@@ -329,7 +467,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 24
+        "y": 32
       },
       "hiddenSeries": false,
       "id": 10,
@@ -437,7 +575,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 32
+        "y": 40
       },
       "id": 8,
       "options": {
@@ -502,7 +640,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 40
+        "y": 48
       },
       "id": 6,
       "options": {
@@ -566,7 +704,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 48
+        "y": 56
       },
       "id": 4,
       "options": {
@@ -629,7 +767,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 56
+        "y": 64
       },
       "id": 2,
       "options": {
