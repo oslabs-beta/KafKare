@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-
+const userRouter = require('./routes/user');
 const app = express();
 
 const PORT = 3002;
@@ -8,6 +8,7 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../src/index.html'));
 });
+app.use('/user', userRouter);
 // global error handling
 app.use((err, req, res, next) => {
   const defaultErr = {
