@@ -115,7 +115,7 @@ services:
       - prometheus
     environment:
       GF_SECURITY_ALLOW_EMBEDDING: 'true'
-      # GF_INSTALL_PLUGINS: natel-discrete-panel
+      GF_INSTALL_PLUGINS: natel-discrete-panel
       GF_PATHS_PLUGINS: /var/lib/grafana/plugins
       GF_AUTH_ANONYMOUS_ENABLED: 'true'
 
