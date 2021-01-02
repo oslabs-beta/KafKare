@@ -35,7 +35,6 @@ const userMetricsValues = ['userId',
        console.log(err)
    }
 
-
 //insert data into the dashboard metrics
 const dashBoardMetrics = `INSERT INTO Metrics (Date, cpu, iowait, idle) VALUES($1, $2 ,$3 ,$4 )`
 const dashBoardValues  = ['Date', 'cpu', 'iowait', 'idle'];
