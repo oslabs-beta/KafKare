@@ -52,10 +52,12 @@ npm install
 <br>
 Set up the docker containers, we have a prebuilt kafka cluster for the demo
 <br>
+
 ```sh
 export HOST_IP=$(ifconfig | grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -v 127.0.0.1 | awk '{ print $2 }' | cut -f2 -d: | head -n1)
 docker-compose up
 ```
+
 <br>
 
 Run the data generator application to create topics and consumers:
