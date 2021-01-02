@@ -8,7 +8,7 @@ function Cpu() {
         src="http://localhost:3000/d-solo/2LyxeP1Mk/total-messages?orgId=1&panelId=6"
         width="400"
         height="180"
-        frameborder="0"
+        frameBorder="0"
       ></iframe>
     </div>
   );
