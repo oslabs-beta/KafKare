@@ -130,3 +130,11 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
     expose:
       - 8085
+  postgres:
+    image: postgres:9.6.6
+    environment:
+      POSTGRES_USER: zoszwsct     
+      POSTGRES_PASSWORD: 3VvqfB9_GFyMZULPbXOAW3pjXt8aqVFF
+      POSTGRES_DB: zoszwsct     
+    ports:
+      - 5432:5432
