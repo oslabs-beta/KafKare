@@ -10,6 +10,7 @@
   background-image: linear-gradient(#4e7ac7, #16193b);
   padding: 20px;
   border-radius: 20px;
+  line-height: 1.5;
 }
 
 img {
@@ -72,6 +73,16 @@ iframe {
 .grid-zookeeper {
   grid-area: header3;
 } */
+.app {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+a:link {
+  text-decoration: none;
+}
 
 input.error {
   border-color: red;
@@ -80,5 +91,6 @@ input.error {
 .input-feedback {
   color: red;
   height: 5px;
-  margin-top: -12px;
+  margin-top: -2px;
+  margin-left: 16px;
 }
