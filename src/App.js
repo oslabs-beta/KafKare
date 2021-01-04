@@ -1,11 +1,15 @@
 import React from 'react';
 import MainDashboard from './MainDashboard';
 import TopicsDrill from './components/TopicsDrill';
+import registerPage from './components/views/registerPage';
+import loginPage from './components/views/loginPage';
 import { HashRouter as Router, Link, Switch, Route } from 'react-router-dom';
 
 const App = () => (
   <Router>
     <Switch>
+      <Route exact path="/login" component={loginPage} />
+      <Route exact path="/register" component={registerPage} />
       <Route exact path="/" component={MainDashboard} />
       <Route exact path="/TopicDrill" component={TopicsDrill} />
     </Switch>
