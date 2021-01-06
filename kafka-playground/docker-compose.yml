@@ -84,17 +84,10 @@ services:
       # - ./data/prometheus/data:/prometheus
     depends_on:
       - kafka_exporter
-      - alertmanager
-      - cadvisor
+      # - alertmanager
+      # - cadvisor
       - node-exporter
     restart: always
-
-  alertmanager:
-    image: prom/alertmanager
-    ports:
-      - 9093:9093
-    depends_on:
-      - kafka_exporter
 
   node-exporter:
     image: prom/node-exporter:latest
@@ -119,14 +112,21 @@ services:
       GF_PATHS_PLUGINS: /var/lib/grafana/plugins
       GF_AUTH_ANONYMOUS_ENABLED: 'true'
 
-  cadvisor:
-    image: google/cadvisor:latest
-    container_name: monitoring_cadvisor
-    restart: always
-    volumes:
-      - /:/rootfs:ro
-      - /var/run:/var/run:rw
-      - /sys:/sys:ro
-      - /var/lib/docker/:/var/lib/docker:ro
-    expose:
-      - 8085
+  # alertmanager:
+  #   image: prom/alertmanager
+  #   ports:
+  #     - 9093:9093
+  #   depends_on:
+  #     - kafka_exporter
+
+  # cadvisor:
+  #   image: google/cadvisor:latest
+  #   container_name: monitoring_cadvisor
+  #   restart: always
+  #   volumes:
+  #     - /:/rootfs:ro
+  #     - /var/run:/var/run:rw
+  #     - /sys:/sys:ro
+  #     - /var/lib/docker/:/var/lib/docker:ro
+  #   expose:
+  #     - 8085

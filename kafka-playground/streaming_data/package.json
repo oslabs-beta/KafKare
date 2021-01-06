@@ -7,9 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "topic": "node topic.js",
     "index": "node index.js",
-    "jd": "node consumer-jd.js",
-    "sr": "node consumer-sr.js",
-    "skills": "node consumer-skills.js"
+    "jd": "node consumer-jd.js"
   },
   "author": "",
   "license": "ISC",

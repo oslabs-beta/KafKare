@@ -1,11 +1,11 @@
 import React from 'react';
-import { withRouter, Link } from 'react-router-dom';
-import moment from 'moment';
+import { Link } from 'react-router-dom';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Form, Input, Button } from 'antd';
 import { Container, Flex, Center } from '@chakra-ui/react';
 import axios from 'axios';
+
 const formItemLayout = {
   labelCol: {
     xs: { span: 24 },
@@ -78,12 +78,10 @@ const registerPage = (props) => {
           values,
           touched,
           errors,
-          dirty,
           isSubmitting,
           handleChange,
           handleBlur,
           handleSubmit,
-          handleReset,
         } = props;
         return (
           <div className="app-1">
