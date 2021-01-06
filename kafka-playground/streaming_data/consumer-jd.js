@@ -1,8 +1,8 @@
 const { Kafka } = require('kafkajs');
 const ip = require('ip');
+
 const host = process.env.HOST_IP || ip.address();
 
-run();
 async function run() {
   try {
     const kafka = new Kafka({
@@ -16,7 +16,6 @@ async function run() {
     console.log('Connected!');
 
     await consumer.subscribe({
-      // topic: 'job_description',
       topic: 'jobs',
       fromBeginning: true,
     });
@@ -25,13 +24,15 @@ async function run() {
     await consumer.run({
       eachMessage: async (result) => {
         console.log(
-          'The result is actually ',
+          'The consumed message is ',
           JSON.parse(result.message.value.toString())
         );
       },
     });
   } catch (ex) {
-    console.error(`Something bad happened ${ex}`);
+    console.error(`Error in consuming ${ex}`);
   } finally {
   }
 }
+
+run();
