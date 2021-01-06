@@ -12,7 +12,7 @@ function TopicDrill() {
       <div className="header-container">
         <h1>Messages Per Topic</h1>
         <span>
-          <Link to="/">
+          <Link to="/dashboard">
             <button>Main Dashboard</button>
           </Link>
         </span>
