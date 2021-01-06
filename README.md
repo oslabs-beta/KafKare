@@ -203,9 +203,10 @@ docker.errors.DockerException: Error while fetching server API version: (2, 'Cre
 
 **A1.** Make sure Docker Desktop is up and running. 
 <br>
-
+</br>
 
 **Q2:** Why doesn't Kafka doesn't start when I use docker-compose.
+
 **A2:** Make sure your hostIP is defined. 
 On iOS or Linux use:
 ```sh
