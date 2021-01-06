@@ -1,0 +1,21 @@
+{
+  "name": "streaming_data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "topic": "node topic.js",
+    "index": "node index.js",
+    "jd": "node consumer-jd.js",
+    "sr": "node consumer-sr.js",
+    "skills": "node consumer-skills.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ip": "^1.1.5",
+    "kafkajs": "^1.15.0",
+    "node-fetch": "^2.6.1"
+  }
+}
