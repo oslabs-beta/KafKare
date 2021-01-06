@@ -83,7 +83,7 @@ const loginPage = (props) => {
         return (
           <div className="app">
             <Container maxW="max" maxH="max">
-              <Center pt="40px" pb="800px">
+              <Center pt="100px" pb="100px">
                 <Flex
                   direction="column"
                   align="center"
@@ -93,6 +93,7 @@ const loginPage = (props) => {
                   borderRadius="8px"
                   padding="30px"
                   justify="center"
+                  color="white"
                 >
                   <Title level={2}>Log In</Title>
                   <form onSubmit={handleSubmit} className="submit-form">
@@ -164,9 +165,7 @@ const loginPage = (props) => {
                       </Checkbox>
                       <div>
                         <Button
-                          type="primary"
                           htmlType="submit"
-                          className="login-form-button"
                           style={{ minWidth: '100%' }}
                           disabled={isSubmitting}
                           onSubmit={handleSubmit}
@@ -176,6 +175,7 @@ const loginPage = (props) => {
                       </div>
                       Or <Link to="/register">register now!</Link>
                     </Form.Item>
+                    <br />
                     <br />
                   </form>
                 </Flex>{' '}
