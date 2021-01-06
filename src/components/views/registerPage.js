@@ -62,7 +62,7 @@ const registerPage = (props) => {
             .then((res) => {
               console.log('register page', res.data);
               if (res.data.success) {
-                props.history.push('/login');
+                props.history.push('/');
               } else {
                 alert('Fail to register, please try it again!');
               }

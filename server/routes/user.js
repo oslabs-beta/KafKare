@@ -57,8 +57,8 @@ router.post('/login', async (req, res, next) => {
     const insertToken = [token, oneHour, email];
     console.log('whats the email', email);
     await db.query(insertJWT, insertToken);
-    res.cookie('w_authExp', rows[0].tokenexp);
-    res.cookie('w_auth', rows[0].token);
+    res.cookie('w_authExp', rows[0].tokenexp, { httpOnly: true });
+    res.cookie('w_auth', rows[0].token, { httpOnly: false });
     console.log(res);
     return res.status(200).json({
       loginSuccess: true,
