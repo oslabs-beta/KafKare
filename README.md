@@ -182,8 +182,8 @@ const PG_URI =
 ```
 
 ## FAQ
-### Docker Compose Error
-Q1. I'm getting this error when I use docker-compose up
+#### Docker Compose Error
+**Q1.** I'm getting this error when I use docker-compose up
 
 ```sh
 During handling of the above exception, another exception occurred:
@@ -201,12 +201,12 @@ Traceback (most recent call last):
 docker.errors.DockerException: Error while fetching server API version: (2, 'CreateFile', 'The system cannot find the file specified.')
 ```
 
-A1. Make sure Docker Desktop is up and running. 
-
+**A1.** Make sure Docker Desktop is up and running. 
 <br>
 
-Q2: Why doesn't Kafka doesn't start when I use docker-compose.
-A2: Make sure your hostIP is defined. 
+
+**Q2:** Why doesn't Kafka doesn't start when I use docker-compose.
+**A2:** Make sure your hostIP is defined. 
 On iOS or Linux use:
 ```sh
 export HOST_IP=$(ifconfig | grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -v 127.0.0.1 | awk '{ print $2 }' | cut -f2 -d: | head -n1)
