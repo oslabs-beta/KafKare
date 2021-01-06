@@ -44,6 +44,7 @@ const loginPage = (props) => {
           axios
             .post('http://localhost:3002/user/login', dataToSubmit)
             .then((response) => {
+              console.log(response);
               console.log('what response issssssssss', response.data);
               if (response.data.loginSuccess) {
                 window.localStorage.setItem('userId', response.userId);
@@ -52,7 +53,7 @@ const loginPage = (props) => {
                 } else {
                   localStorage.removeItem('rememberMe');
                 }
-                props.history.push('/');
+                props.history.push('/dashboard');
               } else {
                 setFormErrorMessage('Check out your Account or Password again');
               }
