@@ -18,6 +18,21 @@
 </p>
 
 
+## Table of Contents
+  1. [Features](#Features)
+  2. [Overview](#Overview)
+  3. [Documentation and Demo](#Documentation and Demo)
+    - Two ways to generate sample kafka data
+      1. [Manual data entry](#Running the demo kafka cluster and manually enter data)
+      2. [Streaming API](#Running the demo kafka cluster and using the API for constant data generation)
+    - [Running the Dashboard Application](#Running the dashboard)
+  4. Setup
+    - [Connecting to an existing instance of Kafka](#Connecting to an existing instance of Kafka)
+    - [Updating User Database](#Connecting the user database)
+  5. [FAQ](#FAQ)
+  6. [License](#License)
+  7. [Authors](#Authors)
+
 ## Features
 
 - Cross-platform Kafka monitoring, real-time data display desktop application
