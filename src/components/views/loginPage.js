@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Form, Input, Button, Checkbox, Typography } from 'antd';
@@ -174,7 +174,7 @@ const loginPage = (props) => {
                           Log in
                         </Button>
                       </div>
-                      Or <a href="/#/register">register now!</a>
+                      Or <Link to="/register">register now!</Link>
                     </Form.Item>
                     <br />
                   </form>

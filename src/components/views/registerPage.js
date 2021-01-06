@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter, Link } from 'react-router-dom';
 import moment from 'moment';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
@@ -200,13 +201,23 @@ const registerPage = (props) => {
                     </Form.Item>
 
                     <Form.Item {...tailFormItemLayout}>
-                      <Button
-                        onClick={handleSubmit}
-                        type="primary"
-                        disabled={isSubmitting}
-                      >
-                        Submit
-                      </Button>
+                      <span>
+                        <Button
+                          onClick={handleSubmit}
+                          type="primary"
+                          disabled={isSubmitting}
+                        >
+                          Submit
+                        </Button>
+
+                        <Button
+                          onClick={handleSubmit}
+                          type="primary"
+                          disabled={isSubmitting}
+                        >
+                          <Link to="/">Cancel</Link>
+                        </Button>
+                      </span>
                     </Form.Item>
                   </Form>
                 </Flex>{' '}
