@@ -38,11 +38,9 @@ Users can register for an account and login to access the dashboard. Passwords a
 <div align="center"><strong>QUICK START</strong></div>
 <br>
 
-<strong>There are two ways to generate your Kafka data: 
+There are two ways to generate your Kafka data: 
 1. Manually - For a controlled amount of data produced
 2. Using an API - For a constant stream of data produced
-</strong>
-
 
 
 #### 1. Running the demo kafka cluster and manually enter data
@@ -93,6 +91,7 @@ In the terminal:
 
 Install all dependencies
 <br>
+
 ```sh
 npm install
 ```
@@ -115,27 +114,22 @@ export HOST_IP=$(ifconfig | grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -v 127.
 docker-compose up
 ```
 
-
-
 <br>
 Run the data streaming application to create topics and consumers:
 
 <br>
 You can start your consumer by going to a new terminal, then open the Kafkare/kafka-playground directory. Now run: 
 
-<br>
 ```sh
 npm run consumer
 ```
 
-<br>
 To create the topic in Kafka, run:
 
 ```sh
 npm run topic
 ```
 
-<br>
 Finally, to create the generate the stream, run:
 
 ```sh
@@ -153,7 +147,7 @@ npm install
 npm build
 npm start
 ```
-<br>
+
 You will see a login page where you can either login with an existing account or create a new account to login with. 
 
   To create a new account, click the register button in the login page. After registering an account, you will be prompted to login in with the account. 
