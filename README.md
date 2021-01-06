@@ -22,11 +22,11 @@
   1. [Features](#Features)
   2. [Overview](#Overview)
   3. [Documentation and Demo](#Documentation-and-Demo)
-    1. Two ways to generate sample kafka data
+    1. [Two ways to generate sample kafka data](#Documentation-and-Demo)
       1. [Manual data entry](#Running-the-demo-kafka-cluster-and-manually-enter-data)
       2. [Streaming API](#Running-the-demo-kafka-cluster-and-using-the-API-for-constant-data-generation)
     2. [Running the Dashboard Application](#Running-the-dashboard)
-  4. Setup
+  4. [Setup](#Connecting-to-an-existing-instance-of-Kafka)
     1. [Connecting to an existing instance of Kafka](#Connecting-to-an-existing-instance-of-Kafka)
     2. [Updating User Database](#Connecting-the-user-database)
   5. [FAQ](#FAQ)
