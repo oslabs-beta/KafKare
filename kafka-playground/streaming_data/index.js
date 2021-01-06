@@ -10,49 +10,21 @@ const getJobData = () => {
   fetch(url, settings)
     .then((res) => res.json())
     .then((json) => {
-      console.log('whats json', json);
       for (let i = 0; i < json.length; i++) {
-        console.log(json[i].job_category, json[i].salary_range_from);
-        // create topic based on job category
-        // settimeout to simulate a streaming environment
-        // produce the data to consumer based on topic: if the job_category is , we will send salary_range_from:salary_range_to: to salary_range topic,
-        // and job_description to job description topic and  preferred_skills: to skill topic
-
-        // const data = [
-        //   {
-        //     topic: 'salary_range',
-        //     messages: [
-        //       {
-        //         value: `${i.salary_range_from}-${i.salary_range_to}`,
-        //       },
-        //     ],
-        //   },
-        //   {
-        //     topic: 'job_description',
-        //     messages: [{ value: i.job_description }],
-        //   },
-        //   {
-        //     topic: 'skills',
-        //     messages: [
-        //       {
-        //         value: i.preferred_skills,
-        //       },
-        //     ],
-        //   },
-        // ];
         setTimeout(() => {
           const data = [
             {
               salary: `${json[i].job_id}: ${json[i].salary_range_from}-${json[i].salary_range_to}`,
             },
           ];
-          console.log(data);
           runProducer('jobs', JSON.stringify(data));
         }, i * 1000);
       }
     });
 };
 getJobData();
+
+//Here is an example of an element of the json array from the fetch request
 /*{
     job_id: '416232',
     agency: 'DEPT OF HEALTH/MENTAL HYGIENE',
