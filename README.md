@@ -43,8 +43,9 @@ Users can register for an account and login to access the dashboard. Passwords a
 2. Using an API - For a constant stream of data produced
 </strong>
 
-*1. Running the demo kafka cluster and manually enter data*
 
+
+#### 1. Running the demo kafka cluster and manually enter data
 <br>
 From root directory (Kafkare) go into the kafka-playground folder:
 
@@ -83,8 +84,8 @@ to see the data generator
 In the data generator, put in a new topic for the broker and submit it.
 Then put in the number of messages you want to produce and submit. This will create that many messages to the kafka cluster.
 
-*2. Running the demo kafka cluster and using the API for constant data generation*
 
+#### 2. Running the demo kafka cluster and using the API for constant data generation
 <br>
 From root directory (Kafkare) go into the kafka-playground folder/streaming_data:
 
@@ -121,25 +122,32 @@ Run the data streaming application to create topics and consumers:
 
 <br>
 You can start your consumer by going to a new terminal, then open the Kafkare/kafka-playground directory. Now run: 
+
 <br>
 ```sh
 npm run consumer
 ```
+
 <br>
 To create the topic in Kafka, run:
+
 ```sh
 npm run topic
 ```
+
 <br>
 Finally, to create the generate the stream, run:
+
 ```sh
 npm run producer
 ```
 
-__*Running the dashboard*__
+#### __*Running the dashboard*__
+
 Open a new terminal. 
 In the root directory (Kafkare), run in the terminal
 <br>
+
 ```sh
 npm install
 npm build
