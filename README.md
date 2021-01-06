@@ -23,8 +23,8 @@
   2. [Overview](#Overview)
   3. [Documentation and Demo](#Documentation-and-Demo)
       1. [Two ways to generate sample kafka data](#Documentation-and-Demo)
-          1. [Manual data entry](#1.-Running-the-demo-kafka-cluster-and-manually-enter-data)
-          2. [Streaming API](#2.-Running-the-demo-kafka-cluster-and-using-the-API-for-constant-data-generation)
+          1. [Manual data entry](#Running-the-demo-kafka-cluster-and-manually-enter-data)
+          2. [Streaming API](#Running-the-demo-kafka-cluster-and-using-the-API-for-constant-data-generation)
       2. [Running the Dashboard Application](#Running-the-dashboard)
   4. [Setup](#Connecting-to-an-existing-instance-of-Kafka)
       1. [Connecting to an existing instance of Kafka](#Connecting-to-an-existing-instance-of-Kafka)
@@ -58,7 +58,7 @@ There are two ways to generate your Kafka data:
 2. Using an API - For a constant stream of data produced
 
 
-#### 1. Running the demo kafka cluster and manually enter data
+#### Running the demo kafka cluster and manually enter data
 <br>
 From root directory (Kafkare) go into the kafka-playground folder:
 
@@ -98,7 +98,7 @@ In the data generator, put in a new topic for the broker and submit it.
 Then put in the number of messages you want to produce and submit. This will create that many messages to the kafka cluster.
 
 
-#### 2. Running the demo kafka cluster and using the API for constant data generation
+#### Running the demo kafka cluster and using the API for constant data generation
 <br>
 From root directory (Kafkare) go into the kafka-playground folder/streaming_data:
 
