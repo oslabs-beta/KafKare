@@ -4,12 +4,9 @@ import Topics from './components/Topics';
 import Zookeeper from './components/Zookeeper';
 import VirtualMem from './components/VirtualMem';
 import Cpu from './components/Cpu';
-import Consumers from './components/Consumers';
 import Health from './components/Health';
 import Lag from './components/Lag';
-import Producers from './components/Producers';
 import mainLogo from './assets/KafKareTsmall.png';
-import TopicsDrill from './components/TopicsDrill';
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
 
 const MainDashboard = () => {
@@ -25,12 +22,14 @@ const MainDashboard = () => {
       </div>
 
       <div className="header-container">
-        <div className="grid-item grid-brokers">
+        <div className="grid-item">
           <Brokers />
         </div>
-        <Link to="/TopicDrill" className="grid-item grid-topics iframe">
+
+        <Link to="/TopicDrill" className="grid-item grid-topics iframe special">
           <Topics />
         </Link>
+
         <div className="grid-item grid-zookeeper">
           <Zookeeper />
         </div>
