@@ -25,7 +25,7 @@ function TopicDrill() {
             frameborder="0"
           ></iframe>
         </div>
-        <div className="partitionReplicas component grid-item iframe">
+        <div className="drillTopics partitionReplicas component grid-item iframe">
           <iframe
             src="http://localhost:3000/d-solo/2LyxeP1Mk/kafka?orgId=1&refresh=5s&panelId=12"
             width="900"

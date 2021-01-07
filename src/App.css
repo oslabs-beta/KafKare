@@ -1,6 +1,8 @@
 body {
   min-width: 1805px;
+  min-height: 1200px
 }
+
 .logo-container {
   display: flex;
   margin-bottom: 20px;
@@ -15,6 +17,7 @@ body {
   border-radius: 20px;
   line-height: 1.5;
 }
+
 .logout {
   display: flex;
   justify-content: end;
@@ -58,13 +61,11 @@ iframe {
   grid-template-columns: repeat(2, 49.4%);
   grid-auto-rows: minmax(200px, auto);
   grid-gap: 20px;
-
   /* border: solid black 3px; */
 }
 
 .grid-container .component {
   /* border: solid red 3px; */
-
   padding: 25px 0px 25px 0px;
 }
 
@@ -89,10 +90,12 @@ iframe {
   font-family: 'Comic Sans MS', 'Comic Sans', cursive;
   background-image: linear-gradient(rgb(169, 169, 223), rgb(9, 1, 28));
 }
+
 .noborder {
   border-bottom: none;
   flex-direction: column;
 }
+
 .app-1 {
   display: flex;
   flex-direction: column;
@@ -101,9 +104,9 @@ iframe {
   font-family: 'Comic Sans MS', 'Comic Sans', cursive;
   min-height: 100vh;
   margin: 0;
-
   background-image: linear-gradient(rgb(169, 169, 223), rgb(9, 1, 28));
 }
+
 a {
   text-decoration: none;
   color: rgb(53, 51, 66);
@@ -122,6 +125,7 @@ input.error {
   margin-left: 18px;
   font-size: large;
 }
+
 input {
   outline: none;
   border-radius: 10px;
@@ -130,10 +134,12 @@ input {
   width: 80%;
   padding-left: 10px;
 }
+
 .checkBox {
   display: inline-block;
   font-size: 1em;
 }
+
 button {
   outline: none;
   top: 40px;
@@ -162,9 +168,17 @@ button:hover {
   color: #80ffd3 !important;
   background-color: #e86668;
 }
+
 .special:hover {
   background-color: #85a2bb;
 }
 
-.body {
+.body.driller {
+  display: flex;
+  flex-direction: column;
+  height: 980px
 }
+
+.body.driller .grid-container {}
+
+.drillTopics {}
