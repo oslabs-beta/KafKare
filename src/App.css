@@ -1,5 +1,8 @@
+body {
+  min-width: 1805px;
+}
 .logo-container {
-  display: grid;
+  display: flex;
   margin-bottom: 20px;
   padding: 10px 0px 10px 0px;
   border-bottom: 2px solid rgb(155, 155, 155);
@@ -31,17 +34,16 @@ iframe {
 }
 
 .component {
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .header-container {
   display: grid;
-  grid-template-columns: repeat(3, 32.5%);
-  grid-template-rows: 100px;
+  grid-template-columns: repeat(auto-fit, minmax(575px, 1fr));
+  grid-template-rows: 170px;
   grid-gap: 20px;
-  /* border: solid blue 3px; */
-  justify-items: stretch;
   margin-bottom: 20px;
 }
 
@@ -50,8 +52,14 @@ iframe {
   grid-template-columns: repeat(2, 49.4%);
   grid-auto-rows: minmax(200px, auto);
   grid-gap: 20px;
-  justify-items: stretch;
+
   /* border: solid black 3px; */
+}
+
+.grid-container .component {
+  /* border: solid red 3px; */
+
+  padding: 25px 0px 25px 0px;
 }
 
 .grid-item {
@@ -64,15 +72,6 @@ iframe {
   box-shadow: 5px 5px 2px 1px rgba(9, 9, 9, 0.139);
 }
 
-/* .grid-brokers {
-  grid-area: header1;
-}
-.grid-topics {
-  grid-area: header2;
-}
-.grid-zookeeper {
-  grid-area: header3;
-} */
 .app {
   flex-direction: column;
   display: flex;
@@ -93,4 +92,10 @@ input.error {
   height: 5px;
   margin-top: -2px;
   margin-left: 16px;
+}
+.special:hover {
+  background-color: #85a2bb;
+}
+
+.body {
 }
