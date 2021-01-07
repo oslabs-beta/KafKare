@@ -1,6 +1,7 @@
 body {
   min-width: 1805px;
-  min-height: 984px;
+  min-height: 100vh;
+  background-image: linear-gradient(rgb(169, 169, 223), rgb(9, 1, 28));
 }
 
 .logo-container {
@@ -11,8 +12,8 @@ body {
 }
 
 .body {
-  background-color: #47484a;
-  background-image: linear-gradient(rgb(169, 169, 223), rgb(9, 1, 28));
+  background-color: transparent;
+  /* background-image: linear-gradient(rgb(169, 169, 223), rgb(9, 1, 28)); */
   padding: 20px;
   border-radius: 20px;
   line-height: 1.5;
@@ -89,7 +90,7 @@ iframe {
   margin: 0;
   border-radius: 20px;
   font-family: 'Comic Sans MS', 'Comic Sans', cursive;
-  background-image: linear-gradient(rgb(169, 169, 223), rgb(9, 1, 28));
+  background-color: transparent;
 }
 
 .noborder {
@@ -106,7 +107,7 @@ iframe {
   min-height: 984px;
   margin: 0;
   border-radius: 20px;
-  background-image: linear-gradient(rgb(169, 169, 223), rgb(9, 1, 28));
+  background-color: transparent;
 }
 
 a {
