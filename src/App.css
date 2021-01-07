@@ -91,6 +91,7 @@ iframe {
 }
 .noborder {
   border-bottom: none;
+  flex-direction: column;
 }
 .app-1 {
   display: flex;
