@@ -145,8 +145,8 @@ Now create the topic in Kafka by running:
 ```sh
 npm run topic
 ```
-Open a new terminal window. From the root directory (Kafkare) go into the kafka-playground directory.
-Finally, to create the generate the stream, run in the new terminal:
+
+Finally, to create the generate the stream, run in the terminal:
 
 ```sh
 npm run producer
