@@ -139,13 +139,14 @@ You can start your consumer by going to a new terminal, then open the Kafkare/ka
 npm run consumer
 ```
 
-To create the topic in Kafka, run:
+Open a new terminal window. From the root directory (Kafkare) go into the kafka-playground directory.
+Now create the topic in Kafka by running:
 
 ```sh
 npm run topic
 ```
 
-Finally, to create the generate the stream, run:
+Finally, to create the generate the stream, run in the terminal:
 
 ```sh
 npm run producer
@@ -159,7 +160,7 @@ In the root directory (Kafkare), run in the terminal
 
 ```sh
 npm install
-npm build
+npm run build
 npm start
 ```
 
