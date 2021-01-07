@@ -5,15 +5,21 @@ body {
   display: flex;
   margin-bottom: 20px;
   padding: 10px 0px 10px 0px;
-  border-bottom: 2px solid rgb(155, 155, 155);
+  border-bottom: 2px solid rgb(124, 121, 121);
 }
 
 .body {
   background-color: #47484a;
-  background-image: linear-gradient(#4e7ac7, #16193b);
+  background-image: linear-gradient(rgb(169, 169, 223), rgb(9, 1, 28));
   padding: 20px;
   border-radius: 20px;
   line-height: 1.5;
+}
+.logout {
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  width: auto;
 }
 
 img {
@@ -73,25 +79,88 @@ iframe {
 }
 
 .app {
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  text-align: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  background-image: linear-gradient(rgb(169, 169, 223), rgb(9, 1, 28));
 }
-a:link {
+.noborder {
+  border-bottom: none;
+  flex-direction: column;
+}
+.app-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  min-height: 100vh;
+  margin: 0;
+
+  background-image: linear-gradient(rgb(169, 169, 223), rgb(9, 1, 28));
+}
+a {
   text-decoration: none;
+  color: rgb(53, 51, 66);
+  font-style: italic;
+  font-weight: bold;
 }
 
 input.error {
-  border-color: red;
+  border-color: #e86668;
 }
 
 .input-feedback {
-  color: red;
+  color: #e86668;
   height: 5px;
   margin-top: -2px;
-  margin-left: 16px;
+  margin-left: 18px;
+  font-size: large;
+}
+input {
+  outline: none;
+  border-radius: 10px;
+  border: none;
+  height: 20px;
+  width: 80%;
+  padding-left: 10px;
+}
+.checkBox {
+  display: inline-block;
+  font-size: 1em;
+}
+button {
+  outline: none;
+  top: 40px;
+  font-family: 'proxima-nova', sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  text-transform: uppercase !important;
+  letter-spacing: 2px;
+  color: white;
+  cursor: hand;
+  text-align: center;
+  text-transform: capitalize;
+  border: 2px solid white;
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden !important;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background: transparent;
+  z-index: 10;
+}
+
+button:hover {
+  color: #80ffd3 !important;
+  background-color: #e86668;
 }
 .special:hover {
   background-color: #85a2bb;

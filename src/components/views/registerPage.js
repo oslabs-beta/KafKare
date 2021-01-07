@@ -84,28 +84,28 @@ const registerPage = (props) => {
           handleSubmit,
         } = props;
         return (
-          <div className="app">
+          <div className="app-1">
             <Container maxW="max" maxH="max">
-              <Center pt="40px" pb="800px">
+              <Center pt="100px" pb="100px">
                 <Flex
                   direction="column"
                   align="center"
                   bg="hsl(218, 52%, 54%, 0.3)"
-                  color="black"
-                  width="400px"
+                  color="white"
                   borderRadius="8px"
-                  padding="30px"
+                  padding="80px"
                   justify="center"
                 >
-                  <h2>Sign up</h2>
+                  <h1>Sign up</h1>
                   <Form
-                    style={{ minWidth: '375px' }}
+                    style={{ minWidth: '375px', paddingLeft: '5em' }}
                     {...formItemLayout}
                     onSubmit={handleSubmit}
                     className="submit-form"
                   >
                     <Form.Item required label="Name">
                       <Input
+                        style={{ minWidth: '70%' }}
                         id="name"
                         placeholder="Enter your name"
                         type="text"
@@ -125,13 +125,14 @@ const registerPage = (props) => {
                     <br />
                     <Form.Item
                       required
-                      label="Email"
+                      label="Email:"
                       hasFeedback
                       validateStatus={
                         errors.email && touched.email ? 'error' : 'success'
                       }
                     >
                       <Input
+                        style={{ minWidth: '70%' }}
                         id="email"
                         placeholder="Enter your Email"
                         type="email"
@@ -148,10 +149,10 @@ const registerPage = (props) => {
                         <div className="input-feedback">{errors.email}</div>
                       )}
                     </Form.Item>
-                    <br />
+
                     <Form.Item
                       required
-                      label="Password"
+                      label="Password:"
                       hasFeedback
                       validateStatus={
                         errors.password && touched.password
@@ -160,6 +161,7 @@ const registerPage = (props) => {
                       }
                     >
                       <Input
+                        style={{ minWidth: '70%' }}
                         id="password"
                         placeholder="Enter your password"
                         type="password"
@@ -177,10 +179,11 @@ const registerPage = (props) => {
                       )}
                     </Form.Item>
 
-                    <Form.Item required label="Confirm" hasFeedback>
+                    <Form.Item required label="Confirm:" hasFeedback>
                       <Input
+                        style={{ minWidth: '70%' }}
                         id="confirmPassword"
-                        placeholder="Enter your confirmPassword"
+                        placeholder="Enter your password again"
                         type="password"
                         value={values.confirmPassword}
                         onChange={handleChange}
@@ -198,24 +201,14 @@ const registerPage = (props) => {
                       )}
                     </Form.Item>
 
-                    <Form.Item {...tailFormItemLayout}>
-                      <span>
-                        <Button
-                          onClick={handleSubmit}
-                          type="primary"
-                          disabled={isSubmitting}
-                        >
-                          Submit
-                        </Button>
+                    <Form.Item style={{ paddingLeft: '3.8em' }}>
+                      <Button onClick={handleSubmit} disabled={isSubmitting}>
+                        Submit
+                      </Button>
 
-                        <Button
-                          onClick={handleSubmit}
-                          type="primary"
-                          disabled={isSubmitting}
-                        >
-                          <Link to="/">Cancel</Link>
-                        </Button>
-                      </span>
+                      <Link to="/">
+                        <Button>Cancel</Button>
+                      </Link>
                     </Form.Item>
                   </Form>
                 </Flex>{' '}

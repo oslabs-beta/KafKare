@@ -39,30 +39,37 @@ router.post('/login', async (req, res, next) => {
   const userValue = [email];
   const insertJWT = `UPDATE users SET token=$1, tokenexp=$2 WHERE email=$3`;
   const findJWT = `SELECT token, tokenexp from users WHERE email=$1`;
-  const { rows } = await db.query(findUser, userValue);
-  console.log(rows);
-  if (!rows) {
+  try {
+    const { rows } = await db.query(findUser, userValue);
+    console.log(rows);
+    if (!rows) {
+      return res.json({
+        loginSuccess: false,
+        message: 'Auth failed, email not found',
+      });
+    }
+    const isMatch = await bcrypt.compare(password, rows[0].password);
+    console.log(isMatch);
+    if (!isMatch) {
+      return res.json({ loginSuccess: false, message: 'Wrong password' });
+    } else {
+      const token = jwt.sign(rows[0]._id.toString(16), 'secret');
+      const oneHour = moment().add(1, 'hour').valueOf();
+      const insertToken = [token, oneHour, email];
+      console.log('whats the email', email);
+      await db.query(insertJWT, insertToken);
+      res.cookie('w_authExp', rows[0].tokenexp, { httpOnly: true });
+      res.cookie('w_auth', rows[0].token, { httpOnly: false });
+      console.log(res);
+      return res.status(200).json({
+        loginSuccess: true,
+        userId: rows[0]._id,
+      });
+    }
+  } catch (err) {
     return res.json({
       loginSuccess: false,
       message: 'Auth failed, email not found',
-    });
-  }
-  const isMatch = await bcrypt.compare(password, rows[0].password);
-  console.log(isMatch);
-  if (!isMatch) {
-    return res.json({ loginSuccess: false, message: 'Wrong password' });
-  } else {
-    const token = jwt.sign(rows[0]._id.toString(16), 'secret');
-    const oneHour = moment().add(1, 'hour').valueOf();
-    const insertToken = [token, oneHour, email];
-    console.log('whats the email', email);
-    await db.query(insertJWT, insertToken);
-    res.cookie('w_authExp', rows[0].tokenexp, { httpOnly: true });
-    res.cookie('w_auth', rows[0].token, { httpOnly: false });
-    console.log(res);
-    return res.status(200).json({
-      loginSuccess: true,
-      userId: rows[0]._id,
     });
   }
 });
