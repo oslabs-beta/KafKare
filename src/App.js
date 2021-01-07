@@ -3,8 +3,10 @@ import MainDashboard from './MainDashboard';
 import TopicsDrill from './components/TopicsDrill';
 import registerPage from './components/views/registerPage';
 import loginPage from './components/views/loginPage';
-import { HashRouter as Router, Link, Switch, Route } from 'react-router-dom';
-import PrivateRoute from './components/auth/auth';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+
+import NavBar from './components/views/Navbar.js';
+
 const App = () => (
   <Router>
     <Switch>

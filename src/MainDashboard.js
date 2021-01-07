@@ -15,9 +15,15 @@ import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom';
 const MainDashboard = () => {
   return (
     <div className="body">
+      <div className="logout">
+        <Link to="/">
+          <button id="logout">Log out</button>
+        </Link>
+      </div>
       <div className="logo-container">
         <img src={mainLogo} width="168" height="65" />
       </div>
+
       <div className="header-container">
         <div className="grid-item grid-brokers">
           <Brokers />

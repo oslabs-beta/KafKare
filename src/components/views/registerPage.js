@@ -98,7 +98,7 @@ const registerPage = (props) => {
                 >
                   <h1>Sign up</h1>
                   <Form
-                    style={{ minWidth: '375px' }}
+                    style={{ minWidth: '375px', paddingLeft: '5em' }}
                     {...formItemLayout}
                     onSubmit={handleSubmit}
                     className="submit-form"
@@ -125,7 +125,7 @@ const registerPage = (props) => {
                     <br />
                     <Form.Item
                       required
-                      label="Email"
+                      label="Email:"
                       hasFeedback
                       validateStatus={
                         errors.email && touched.email ? 'error' : 'success'
@@ -152,7 +152,7 @@ const registerPage = (props) => {
 
                     <Form.Item
                       required
-                      label="Password"
+                      label="Password:"
                       hasFeedback
                       validateStatus={
                         errors.password && touched.password
@@ -179,11 +179,11 @@ const registerPage = (props) => {
                       )}
                     </Form.Item>
 
-                    <Form.Item required label="Confirm" hasFeedback>
+                    <Form.Item required label="Confirm:" hasFeedback>
                       <Input
                         style={{ minWidth: '70%' }}
                         id="confirmPassword"
-                        placeholder="Enter your confirmPassword"
+                        placeholder="Enter your password again"
                         type="password"
                         value={values.confirmPassword}
                         onChange={handleChange}
@@ -201,7 +201,7 @@ const registerPage = (props) => {
                       )}
                     </Form.Item>
 
-                    <Form.Item {...tailFormItemLayout}>
+                    <Form.Item style={{ paddingLeft: '3.8em' }}>
                       <Button onClick={handleSubmit} disabled={isSubmitting}>
                         Submit
                       </Button>
