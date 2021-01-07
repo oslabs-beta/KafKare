@@ -1,6 +1,6 @@
 body {
   min-width: 1805px;
-  min-height: 1200px
+  min-height: 984px;
 }
 
 .logo-container {
@@ -85,8 +85,9 @@ iframe {
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 100vh;
+  min-height: 1025px;
   margin: 0;
+  border-radius: 20px;
   font-family: 'Comic Sans MS', 'Comic Sans', cursive;
   background-image: linear-gradient(rgb(169, 169, 223), rgb(9, 1, 28));
 }
@@ -102,8 +103,9 @@ iframe {
   justify-content: center;
   align-items: center;
   font-family: 'Comic Sans MS', 'Comic Sans', cursive;
-  min-height: 100vh;
+  min-height: 984px;
   margin: 0;
+  border-radius: 20px;
   background-image: linear-gradient(rgb(169, 169, 223), rgb(9, 1, 28));
 }
 
@@ -176,9 +178,24 @@ button:hover {
 .body.driller {
   display: flex;
   flex-direction: column;
-  height: 980px
+  min-width: 1805px;
+  height: 984px;
 }
 
-.body.driller .grid-container {}
+.body.driller .grid-container {
+  display: flex;
+  flex-direction: column;
 
-.drillTopics {}
+  align-items: center;
+}
+
+.drillTopics.component {
+  width: 60%;
+  margin-top: -30px;
+  margin-bottom: 40px;
+}
+
+.aspan {
+  padding: 0;
+  margin: -30px 0px -30px 0px;
+}
