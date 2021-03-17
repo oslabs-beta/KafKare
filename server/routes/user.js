@@ -11,12 +11,16 @@ router.post('/signup', (req, res, next) => {
   const { name, email, password } = req.body;
 
   bcrypt.hash(password, saltRounds, (err, hash) => {
-    const insertUsers = `INSERT INTO users(name, email, password) VALUES($1, $2, $3)`;
+    const insertUsers = `INSERT INTO users(name, email, password) VALUES($1, $2, $3) RETURNING _id, email, name`;
     const signupValue = [name, email, hash];
     db.query(insertUsers, signupValue)
       .then((data) => {
+        const output = data.rows[0];
         console.log('user data is', data.rows);
         return res.json({
+          id: output._id,
+          name: output.name,
+          email: output.email,
           success: true,
         });
       })
@@ -56,11 +60,10 @@ router.post('/login', async (req, res, next) => {
       const token = jwt.sign(rows[0]._id.toString(16), 'secret');
       const oneHour = moment().add(1, 'hour').valueOf();
       const insertToken = [token, oneHour, email];
-      console.log('whats the email', email);
       await db.query(insertJWT, insertToken);
       res.cookie('w_authExp', rows[0].tokenexp, { httpOnly: true });
       res.cookie('w_auth', rows[0].token, { httpOnly: false });
-      console.log(res);
+
       return res.status(200).json({
         loginSuccess: true,
         userId: rows[0]._id,
@@ -73,6 +76,7 @@ router.post('/login', async (req, res, next) => {
     });
   }
 });
+
 router.get('/auth', (req, res) => {
   console.log('whatscookie', req.cookies.w_auth);
   const token = req.cookies.w_auth;
@@ -96,4 +100,20 @@ router.get('/auth', (req, res) => {
     })
     .catch((err) => res.send(err));
 });
+
+// deletes a user, returns 1 on success
+router.delete('/:id', (req, res) => {
+  const { id } = req.params;
+  const query = `DELETE FROM users WHERE _id = $1`;
+  const inputs = [id];
+
+  db.query(query, inputs)
+    .then((data) => {
+      if (data) {
+        return res.json(data.rowCount);
+      }
+    })
+    .catch((err) => res.send(err));
+});
+
 module.exports = router;
