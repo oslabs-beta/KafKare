@@ -24,6 +24,9 @@ app.use((err, req, res, next) => {
   return res.status(errorObj.status).json(errorObj.message);
 });
 
-app.listen(PORT, function () {
+// start server
+const server = app.listen(PORT, function () {
   console.log(`server listening on ${PORT}`);
 });
+
+module.exports = { server, app };
